@@ -17,7 +17,7 @@ const CardPizza = ({ name, price, ingredients, img }) => {
                 <p className="m-0">🍕{ingredientes}</p>
             </Card.Body>
             <Card.Footer>
-                <p className="precio">Precio {/* ${setearValor(price)} */}</p>
+                <p className="precio">Precio: ${price.toLocaleString()}</p>
                 <div className="d-flex justify-content-evenly">
                     <Button variant="outline-dark">Ver más 👀</Button>
                     <Button variant="dark">Añadir 🛒</Button>

@@ -12,14 +12,14 @@ const Navbar = () => {
         </>):
         (<>
         <Button className="me-2" variant="outline-light">🔐 Login</Button>
-        <Button className="me-2" variant="outline-light">🔐 Registrer</Button>
+        <Button className="me-2" variant="outline-light">🔐 Register</Button>
         </>)
     )
 
     return (
         <>
-            <NavbarAlias expand="lg" bg="dark" className='justify-content-between' data-bs-theme="dark">
-                <Container>
+        <NavbarAlias expand="lg" bg="dark" className='justify-content-between' data-bs-theme="dark">
+            <Container>
                 <NavbarAlias.Brand href="#home">¡Pizzeria Mamma Mia!</NavbarAlias.Brand>
                 <NavbarAlias.Toggle aria-controls="basic-navbar-nav"/>
                 <NavbarAlias.Collapse id="basic-navbar-nav">
@@ -28,11 +28,11 @@ const Navbar = () => {
                 {botones}
                 </Nav>
                 <Nav className='justify-content-end'>
-                <Button variant="outline-light">🛒Total: ${/* {setearValor(total)} */}</Button>
+                <Button variant="outline-light">🛒Total: ${total.toLocaleString()}</Button>
                 </Nav>
                 </NavbarAlias.Collapse>
-                </Container>
-            </NavbarAlias>
+            </Container>
+        </NavbarAlias>
     </>
   )
 }
