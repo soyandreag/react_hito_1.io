@@ -1,8 +1,8 @@
-import { Card, Button } from 'react-bootstrap'
-/* import { setearValor } from '../utils/funciones.js' */
-import './CardPizza.css'
+import { Card, Button } from "react-bootstrap"
+import { setearValor }  from '../../assets/utils/funciones'
+import './CardPizza'
 
-const CardPizza = ({ name, price, ingredients, img }) => {
+function CardPizza({ name, price, ingredients, img }) {
 
     const ingredientes = ingredients.join(", ");
 
@@ -21,7 +21,7 @@ const CardPizza = ({ name, price, ingredients, img }) => {
                 <div className="d-flex justify-content-evenly">
                     <Button variant="outline-dark">Ver más 👀</Button>
                     <Button variant="dark">Añadir 🛒</Button>
-                </div>    
+                </div>
             </Card.Footer>
         </Card>
     )

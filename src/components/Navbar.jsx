@@ -1,5 +1,5 @@
 import { Container, Button, Navbar as NavbarAlias, Nav} from 'react-bootstrap';
-/* import { setearValor} from '../utils/funciones.js'  */
+import { setearValor} from '../assets/utils/funciones' 
 /**Función creada, no ejecutable aún**/
 
 const Navbar = () => {

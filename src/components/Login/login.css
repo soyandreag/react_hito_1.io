@@ -1,0 +1,11 @@
+.boxRegister{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.boxForm{
+    width: 400px;
+}
+

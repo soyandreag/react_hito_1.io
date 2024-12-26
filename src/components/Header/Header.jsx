@@ -1,6 +1,6 @@
 import './Header.css'
 
-const Header = () => {
+function Header() {
   return (
     <header className="header">
       <p className='titulo'>¡Pizzería Mamma Mia!</p>
