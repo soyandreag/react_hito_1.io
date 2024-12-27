@@ -1,36 +1,34 @@
-import { useState } from "react"
-import { Button, Form } from "react-bootstrap"
+import React, { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
 import "./login.css"
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
     const LoginPage = () => {
-        const [mail, setMail] = useState("")
-        const [password, setPassword] = useState("")
+        const [mail, setMail] = useState("");
+        const [password, setPassword] = useState("");
 
         const handleSubmit = (e) => {
-            e.preventDefault()
+            e.preventDefault();
+
             if (!mail || !password) {
                 Swal.fire({
                     text: 'Debe llenar todos los campos',
                     icon: 'error'
                 });
-                return
-            }
-            if (password.length < 6) {
+            } else if (password.length < 6) {
                 Swal.fire({
                     text: 'La contraseña debe contener al menos 6 caracteres o más',
                     icon: 'error'
                 });
-                return
-            }
+            } else {
                 Swal.fire({
                     text: 'Inicio de sesión exitoso!',
                     icon: 'success'
                 });
             }
+        };
 
             return (
-                <>
                 <div className="boxRegister">
                     <div className="boxForm">
                         <Form onSubmit={handleSubmit}>
@@ -58,8 +56,7 @@ import Swal from 'sweetalert2'
                     </Form>
                 </div>
             </div>
-        </>
-    )
-}
+        );
+    };
 
-    export default LoginPage
+    export default LoginPage;

@@ -1,41 +1,43 @@
-import React, { useState } from "react";
-import Swal from 'sweetalert2';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from "react"
+import { Button, Form } from "react-bootstrap"
+import "../Login/login.css"
+import Swal from 'sweetalert2'
 
-function RegisterPage() {
-    const [mail, setMail] = useState("")
-    const [password, setPassword] = useState("")
-    const [password2, setPassword2] = useState("")
+
+const RegisterPage = () => {
+    const [mail, setMail] = useState("");
+    const [password, setPassword] = useState("");
+    const [password2, setPassword2] = useState("");
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
+
         if (!mail || !password || !password2) {
             Swal.fire({
-                text: 'Debe rellenar todos los campos',
-                icon: 'error'
+                text: 'Debe rellenar todos los campos.',
+                icon: 'error',
             });
             return
-        }
+        } 
         if (password.length < 6) {
             Swal.fire({
-                text: 'La contraseña debe contener 6 caracteres o más',
-                icon: 'error'
+                text: 'La contraseña debe contener 6 caracteres',
+                icon: 'error',
             });
             return
-        }
+        } 
         if (password != password2) {
             Swal.fire({
                 text: 'Las contraseñas no coinciden',
-                icon: 'error'
+                icon: 'error',
             });
             return
         }
-
-        Swal.fire({
-            text: 'Registro exitoso',
-            icon: 'success'
-        });
-    }
+            Swal.fire({
+                text: 'Registro exitoso',
+                icon: 'success',
+            });
+        }
 
     return (
         <>
@@ -76,8 +78,9 @@ function RegisterPage() {
                     </Form>
                 </div>
             </div>
-        </>
+        </>    
     )
 }
 
-export default RegisterPage
+
+export default RegisterPage;
