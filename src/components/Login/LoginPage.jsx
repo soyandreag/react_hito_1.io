@@ -15,20 +15,23 @@ import Swal from 'sweetalert2';
                     text: 'Debe llenar todos los campos',
                     icon: 'error'
                 });
-            } else if (password.length < 6) {
-                Swal.fire({
+                return
+            }
+            if (password.length < 6) {
+                    Swal.fire({
                     text: 'La contraseña debe contener al menos 6 caracteres o más',
                     icon: 'error'
                 });
-            } else {
+                return
+            } 
                 Swal.fire({
                     text: 'Inicio de sesión exitoso!',
                     icon: 'success'
                 });
             }
-        };
 
             return (
+                <>
                 <div className="boxRegister">
                     <div className="boxForm">
                         <Form onSubmit={handleSubmit}>
@@ -56,7 +59,8 @@ import Swal from 'sweetalert2';
                     </Form>
                 </div>
             </div>
-        );
-    };
+            </>
+        )
+    }
 
     export default LoginPage;

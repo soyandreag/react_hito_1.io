@@ -1,6 +1,5 @@
 import { Container, Button, Navbar as NavbarAlias, Nav} from 'react-bootstrap';
-import { setearValor} from '../assets/utils/funciones' 
-/**Función creada, no ejecutable aún**/
+import { setearValor} from '../assets/utils/funciones.js'; /**Función creada, no ejecutable aún**/
 
 const Navbar = () => {
     const total = 25000
@@ -20,7 +19,7 @@ const Navbar = () => {
         <>
         <NavbarAlias expand="lg" bg="dark" className='justify-content-between' data-bs-theme="dark">
             <Container>
-                <NavbarAlias.Brand href="#home">¡Pizzeria Mamma Mia!</NavbarAlias.Brand>
+                <NavbarAlias.Brand href="#home">Pizzeria Mamma Mia!</NavbarAlias.Brand>
                 <NavbarAlias.Toggle aria-controls="basic-navbar-nav"/>
                 <NavbarAlias.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
@@ -28,7 +27,7 @@ const Navbar = () => {
                 {botones}
                 </Nav>
                 <Nav className='justify-content-end'>
-                <Button variant="outline-light">🛒Total: ${total.toLocaleString()}</Button>
+                <Button variant="outline-light">🛒Total: ${setearValor(total)}</Button>
                 </Nav>
                 </NavbarAlias.Collapse>
             </Container>
