@@ -1,9 +1,22 @@
+import { useEffect, useState } from "react"
 import CardPizza from "../CardPizza/CardPizza" 
 import Header from "../Header/Header.jsx" 
 import './Home.css'
-import { pizzas } from '../../assets/js/pizzas.js' 
 
 const Home = () => {
+    const [pizzas, setPizzas] = useState([])
+    const URL = 'http://localhost:5000/api/pizzas/p001'
+    
+    useEffect(() => {
+        loadPizzas()
+    }, [])
+
+    const loadPizzas = async () => {
+        const res = await fetch(URL)
+        const data = await res.json()
+        setPizzas(data)
+    } 
+
     return (
         <>
             <Header />
