@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react"
-import CardPizza from "../CardPizza/CardPizza"
+import CardPizza from "../../components/CardPizza/CardPizza"
 
 const Pizza = () => {
     const [pizzaUnitaria, setPizzaUnitaria] = useState([])
-    const URL = 'http://localhost:5000/api/pizzas'
+    const URL = 'http://localhost:5000/api/pizzas/p001'
 
     useEffect(() => {
         const loadPizza = async () => {
             const res = await fetch(URL)
             const data = await res.json()
-            setPizzaUnitaria(data)
+            setPizzaUnitaria([data])
         }
         loadPizza()
     }, [])

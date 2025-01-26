@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import CardPizza from "../CardPizza/CardPizza" 
-import Header from "../Header/Header.jsx" 
+import CardPizza from "../../components/CardPizza/CardPizza.jsx" 
+import Header from "../../components/Header/Header.jsx" 
 import './Home.css'
 
 const Home = () => {
     const [pizzas, setPizzas] = useState([])
-    const URL = 'http://localhost:5000/api/pizzas/p001'
+    const URL = 'http://localhost:5000/api/pizzas'
     
     useEffect(() => {
         loadPizzas()
@@ -32,8 +32,7 @@ const Home = () => {
                     </div>
                 ))}
             </div>
-
-            </>
+        </>
         )
     }
                   

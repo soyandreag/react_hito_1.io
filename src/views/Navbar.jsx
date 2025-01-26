@@ -1,17 +1,26 @@
 import { Container, Button, Navbar as NavbarAlias, Nav} from 'react-bootstrap';
 import { setearValor} from '../assets/utils/funciones.js'; /**Función creada, no ejecutable aún**/
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const total = 25000
     const token = false
     const botones = (token ?
         (<>
-        <Button className="me-2" variant="outline-ligth">🔓 Profile</Button>
-        <Button className="me-2" variant="outline-ligth">🔒 Logout</Button>
-        </>):
+        <Link to='/profile'>
+            <Button className="me-2" variant="outline-ligth">🔓 Profile</Button>
+        </Link>
+        <Link to='/logout'>
+            <Button className="me-2" variant="outline-ligth">🔒 Logout</Button>
+        </Link>
+        </>) :
         (<>
-        <Button className="me-2" variant="outline-light">🔐 Login</Button>
+        <Link to='/login'>
+            <Button className="me-2" variant="outline-light">🔐 Login</Button>
+        </Link>
+        <Link to='/register'>
         <Button className="me-2" variant="outline-light">🔐 Register</Button>
+        </Link>
         </>)
     )
 
@@ -23,11 +32,15 @@ const Navbar = () => {
                 <NavbarAlias.Toggle aria-controls="basic-navbar-nav"/>
                 <NavbarAlias.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                <Button className="me-2" variant="outline-light">🍕 Home</Button>
+                <Link to='/'>
+                    <Button className="me-2" variant="outline-light">🍕 Home</Button>
+                </Link>
                 {botones}
                 </Nav>
                 <Nav className='justify-content-end'>
-                <Button variant="outline-light">🛒Total: ${setearValor(total)}</Button>
+                    <Link to='/cart'>
+                        <Button variant="outline-light">🛒Total: ${setearValor(total)}</Button>
+                    </Link>
                 </Nav>
                 </NavbarAlias.Collapse>
             </Container>
@@ -36,4 +49,4 @@ const Navbar = () => {
   )
 }
     
-export default Navbar;
+export default Navbar

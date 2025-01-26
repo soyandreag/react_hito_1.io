@@ -1,10 +1,9 @@
 import { Card, Button } from "react-bootstrap"
 import { setearValor }  from '../../assets/utils/funciones.js'
 import './CardPizza.css'
+import { Link } from "react-router-dom";
 
-const CardPizza = ({ name, price, ingredients, img }) => {
-
-    const ingredientes = ingredients.join(", ");
+const CardPizza = ({ name, price, ingredients, img, desc ="" }) => {
 
     return (
         <Card className="card mt-3" bg="ligth">
@@ -15,7 +14,7 @@ const CardPizza = ({ name, price, ingredients, img }) => {
             <Card.Body>
                 <p className="mb-2">🍕 Ingredientes:</p>
                 <ul className="m-0 listaIngredientes">
-                    {ingredients.map(ingrediente => 
+                    {ingredients.map((ingrediente) => 
                         <li key = { ingrediente } > { ingrediente }</li>
                         )}
                 </ul>
@@ -23,7 +22,9 @@ const CardPizza = ({ name, price, ingredients, img }) => {
             <Card.Footer>
                 <p className="precio">Precio: ${setearValor(price)}</p>
                 <div className="d-flex justify-content-evenly">
-                    <Button variant="outline-dark">Ver más 👀</Button>
+                    <Link to='/pizza/001'>
+                        <Button variant="outline-dark">Ver más 👀</Button>
+                    </Link>
                     <Button variant="dark">Añadir 🛒</Button>
                 </div>
             </Card.Footer>

@@ -32,8 +32,10 @@ import Swal from 'sweetalert2';
 
             return (
                 <>
-                <div className="boxRegister">
-                    <div className="boxForm">
+                <div className="d-flex flex-column align-content-between align-items-center">
+                    <div className="box d-flex justify-content-center align-items-center mt-2 radius">
+                        <div className='boxImage'></div>
+                        <div className='boxInside d-flex flex-column justify-content-center align-items-center'>
                         <Form onSubmit={handleSubmit}>
                             <p className="titulo">Login</p>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -53,14 +55,17 @@ import Swal from 'sweetalert2';
                                 onChange={(e) => setPassword(e.target.value)}
                                 />
                             </Form.Group>
+
                             <Button variant="primary" type="submit">
                                 Login
                             </Button>
                     </Form>
                 </div>
             </div>
+        </div>
+
             </>
         )
     }
 
-    export default LoginPage;
+    export default LoginPage

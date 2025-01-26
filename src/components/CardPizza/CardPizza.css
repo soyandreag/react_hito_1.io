@@ -14,3 +14,9 @@
     font-weight: bold;
     font-size: 1.4em;
 }
+
+.listaIngredientes{
+    text-align: start;
+    font-size: 1.1em;
+    margin-top: 5px;
+}
